@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+
+class LoginPage  extends StatelessWidget {
+  const LoginPage ({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +12,6 @@ class LoginPage extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(24.0),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const SizedBox(height: 40),
               const Text(
@@ -24,13 +24,15 @@ class LoginPage extends StatelessWidget {
               ),
               const SizedBox(height: 40),
               const Text(
-                'LOGIN',
+                'EMAIL & SENHA',
                 style: TextStyle(
                   fontSize: 20,
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                 ),
               ),
+              const SizedBox(height: 12),
+              const LinearProgressIndicator(value: 1.0, color: Colors.white),
               const SizedBox(height: 40),
               Container(
                 padding: const EdgeInsets.all(16),
@@ -39,9 +41,9 @@ class LoginPage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(16),
                 ),
                 child: Column(
-                  children: [
+                  children: const [
                     Row(
-                      children: const [
+                      children: [
                         Icon(Icons.email, color: Colors.pink),
                         SizedBox(width: 8),
                         Expanded(
@@ -51,10 +53,10 @@ class LoginPage extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 16),
+                    SizedBox(height: 16),
                     Row(
-                      children: const [
-                        Icon(Icons.vpn_key, color: Colors.pink),
+                      children: [
+                        Icon(Icons.lock, color: Colors.pink),
                         SizedBox(width: 8),
                         Expanded(
                           child: TextField(
@@ -73,7 +75,7 @@ class LoginPage extends StatelessWidget {
                 children: [
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.pop(context); // Volta para tela inicial
+                      Navigator.pop(context);
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white,
@@ -82,14 +84,11 @@ class LoginPage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(30),
                       ),
                     ),
-                    child: const Text('VOLTAR'),
+                    child: const Text('Voltar'),
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      // Aqui entra a lógica de login
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text("Login efetuado")),
-                      );
+                      Navigator.pushNamedAndRemoveUntil(context, '/home', (route) => false);
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white,
@@ -98,7 +97,7 @@ class LoginPage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(30),
                       ),
                     ),
-                    child: const Text('ENTRAR'),
+                    child: const Text('Login'),
                   ),
                 ],
               )
@@ -109,3 +108,4 @@ class LoginPage extends StatelessWidget {
     );
   }
 }
+

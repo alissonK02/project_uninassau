@@ -4,7 +4,7 @@ import 'pages/cadastro.dart';
 import 'pages/cadastrpt2.dart';
 import 'pages/cadastro-email.dart';
 import 'pages/login.dart';
-
+import 'pages/Appcontroller.dart'; // NOVO: Importa o controlador principal
 
 void main() {
   runApp(const MeuApp());
@@ -17,15 +17,16 @@ class MeuApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/', // Tela inicial
+      initialRoute: '/', // Primeira tela mostrada
       routes: {
         '/': (context) => const TelaInicial(),
         '/cadastro': (context) => const CadastroEtapa1Page(),
         '/cadastro2': (context) => const CadastroEtapa2Page(),
         '/cadastroEmail': (context) => const CadastroEmailPage(),
         '/login': (context) => const LoginPage(),
-
+        '/home': (context) => const HomeP(tarefas: []),
       },
     );
   }
 }
+

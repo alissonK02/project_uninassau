@@ -87,7 +87,7 @@ class CadastroEmailPage extends StatelessWidget {
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      // Aqui você pode definir o que fazer após o cadastro final
+                      Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
                       showDialog(
                         context: context,
                         builder: (_) => AlertDialog(
@@ -109,7 +109,7 @@ class CadastroEmailPage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(30),
                       ),
                     ),
-                    child: const Text('CONFIRMAR'),
+                    child: const Text('Concluir'),
                   ),
                 ],
               )

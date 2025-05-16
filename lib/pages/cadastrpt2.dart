@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
+
 class CadastroEtapa2Page extends StatelessWidget {
   const CadastroEtapa2Page({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFc10746), // gradiente vermelho fixo
+      backgroundColor: const Color(0xFFc10746),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(24.0),
@@ -32,7 +33,7 @@ class CadastroEtapa2Page extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 12),
-              const LinearProgressIndicator(value: 0.66, color: Colors.white),
+              const LinearProgressIndicator(value: 0.33, color: Colors.white),
               const SizedBox(height: 40),
               Container(
                 padding: const EdgeInsets.all(16),
@@ -92,7 +93,7 @@ class CadastroEtapa2Page extends StatelessWidget {
                 children: [
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.pop(context);
+                      Navigator.pop(context); // ou navegação para tela anterior
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white,
@@ -101,7 +102,7 @@ class CadastroEtapa2Page extends StatelessWidget {
                         borderRadius: BorderRadius.circular(30),
                       ),
                     ),
-                    child: const Text('VOLTAR'),
+                    child: const Text('Voltar'),
                   ),
                   ElevatedButton(
                     onPressed: () {
@@ -114,7 +115,7 @@ class CadastroEtapa2Page extends StatelessWidget {
                         borderRadius: BorderRadius.circular(30),
                       ),
                     ),
-                    child: const Text('CONTINUAR'),
+                    child: const Text('Proximo'),
                   ),
                 ],
               )

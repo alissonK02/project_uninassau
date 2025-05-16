@@ -11,20 +11,10 @@ class TelaInicial extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Icon(
-              Icons.favorite,
-              color: Colors.white,
-              size: 100,
-            ),
-            const SizedBox(height: 20),
-            const Text(
-              'NÓS',
-              style: TextStyle(
-                fontSize: 40,
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-                letterSpacing: 2,
-              ),
+            Image.asset(
+              'image/logo.png',
+              width: 150,
+              height: 150,
             ),
             const SizedBox(height: 50),
             // Botão "Já tenho uma conta"
@@ -32,7 +22,7 @@ class TelaInicial extends StatelessWidget {
               width: 250,
               child: ElevatedButton(
                 onPressed: () {
-                  // Navegação para login futuramente
+                  Navigator.pushNamed(context, '/login'); // ajuste conforme sua rota
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.white,
@@ -49,7 +39,6 @@ class TelaInicial extends StatelessWidget {
               width: 250,
               child: ElevatedButton(
                 onPressed: () {
-                  // Navegação para a tela de cadastro
                   Navigator.pushNamed(context, '/cadastro');
                 },
                 style: ElevatedButton.styleFrom(

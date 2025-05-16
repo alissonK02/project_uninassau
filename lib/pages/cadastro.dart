@@ -102,7 +102,7 @@ class CadastroEtapa1Page extends StatelessWidget {
                         borderRadius: BorderRadius.circular(30),
                       ),
                     ),
-                    child: const Text('VOLTAR'),
+                    child: const Text('Voltar'),
                   ),
                   ElevatedButton(
                     onPressed: () {
@@ -115,7 +115,7 @@ class CadastroEtapa1Page extends StatelessWidget {
                         borderRadius: BorderRadius.circular(30),
                       ),
                     ),
-                    child: const Text('CONTINUAR'),
+                    child: const Text('Proximo'),
                   ),
                 ],
               )
